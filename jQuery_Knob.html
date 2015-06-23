@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Knob demo</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="js/jquery.knob.js"></script>
+
+
+    <body>
+<input data-width="400" data-height="400" class="dial">
+
+<section class="Section align-center">
+    <div class="StatCircles">
+        <div class="statcircle_wrap">
+            <input type="text" class="statcircle pos" data-min="0" data-max="100" value="0" data-targetValue="25"><br />
+            AVG. VISIT DURATION
+        </div>
+        <div class="statcircle_wrap">
+            <input type="text" class="statcircle pos" data-min="0" data-max="100" value="0"  data-targetValue="75"><br />
+            SOCIAL MEDIA REACH
+        </div>
+        <div class="statcircle_wrap">
+            <input type="text" class="statcircle neg" data-min="0" data-max="100" value="0" data-fgColor="#999" data-targetValue="20"><br />
+            BOUNCE RATE
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function() {
+        $(".dial").knob();
+
+
+        $(".pos").knob({
+            'thickness' : '.1',
+            'width' : '185',
+            'dynamicDraw' : 'true',
+            'fgColor' : '#f70',
+            'bgColor' : '#999',
+            'readOnly' : false,
+            'inputColor':'#000',
+            'draw' : function () { $(this.i).val(this.cv + '%'); },
+            'font':'avant-garde,Helvetica,Arial,sans-serif',
+        });
+        $(".neg").knob({
+            'thickness' : '.03',
+            'width' : '185',
+            'dynamicDraw' : 'true',
+            'fgColor' : '#f70',
+            'bgColor' : '#999',
+            'readOnly' : false,
+            'inputColor':'#000',
+            "rotation":"anticlockwise",
+            'draw' : function () { $(this.i).val('-'+this.cv + '%'); },
+            'font':'avant-garde,Helvetica,Arial,sans-serif',
+        });
+    });
+
+</script>
+    </body>
+</html>
