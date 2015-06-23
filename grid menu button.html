@@ -1,0 +1,154 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+  $('.btn--menu').click(function () {
+    $('.not--x__piece--1, .not--x__piece--2, .not--x__piece--3, .not--x__piece--4').toggleClass('is--x');
+    $('.nav').toggleClass('is--visible');
+  });
+});
+</script>
+<style>
+body {
+  background: #FF4E50;
+}
+
+.btn {
+  border: none;
+  text-decoration: none;
+  outline: none;
+}
+.btn--menu {
+  width: 44px;
+  height: 44px;
+  background: none;
+  position: fixed;
+  border-radius: 2px;
+  top: 24px;
+  left: 24px;
+  z-index: 100;
+  /* box-shadow: 0px 1px 1px rgba(0, 0, 0, .15); */
+}
+.btn--menu span {
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  display: block;
+  float: left;
+  margin: 2px;
+  position: relative;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.not--x__piece {
+  background: #2e42ac;
+  position: relative;
+  transition: all .25s ease-out;
+}
+.not--x__piece:hover {
+  background: #919ee2;
+  transition: all .25s ease-out;
+}
+.not--x__piece--1 {
+  top: 0px;
+  left: 0px;
+  transition: all .25s ease-out;
+}
+.not--x__piece--2 {
+  top: 0px;
+  left: 0px;
+  transition: all .25s ease-out;
+}
+.not--x__piece--3 {
+  top: 0px;
+  left: 0px;
+  transition: all .25s ease-out;
+}
+.not--x__piece--4 {
+  top: 0px;
+  left: 0px;
+  transition: all .25s ease-out;
+}
+.not--x__piece--1.is--x {
+  top: 5px;
+  left: 5px;
+  transition: all .25s ease-out;
+}
+.not--x__piece--2.is--x {
+  top: 5px;
+  left: 15px;
+  transition: all .25s ease-out;
+}
+.not--x__piece--3.is--x {
+  top: 5px;
+  left: -15px;
+  transition: all .25s ease-out;
+}
+.not--x__piece--4.is--x {
+  top: -15px;
+  left: -5px;
+  transition: all .25s ease-out;
+}
+
+.x__piece {
+  background: #2e42ac;
+  transition: all .25s ease-out;
+}
+.x__piece:hover {
+  background: #919ee2;
+  transition: all .25s ease-out;
+}
+
+.nav.is--visible {
+  top: 24px;
+  transition: all .25s ease-out;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  opacity: 1;
+}
+
+.nav {
+  height: 44px;
+  line-height: 44px;
+  position: fixed;
+  top: -44px;
+  left: 70px;
+  transition: all .25s ease-out;
+  background: none;
+  border-left: none;
+  border-top: 1px solid #FF4E50;
+  border-bottom: 1px solid #FF4E50;
+  padding: 0px 24px 0px 70px;
+  position: relative;
+  left: 0px;
+  opacity: 0;
+}
+.nav a {
+  color: white;
+  margin-right: 12px;
+  transition: all .25s ease-out;
+}
+.nav a:hover {
+  color: #2e42ac;
+  transition: all .25s ease-out;
+}
+
+</style>
+<button type='button' class='btn btn--menu'>
+  <span class='x__piece'></span>
+  <span class='not--x__piece not--x__piece--1'></span>
+  <span class='x__piece'></span>
+  <span class='not--x__piece not--x__piece--2'></span>
+  <span class='x__piece'></span>
+  <span class='not--x__piece not--x__piece--3'></span>
+  <span class='x__piece'></span>
+  <span class='not--x__piece not--x__piece--4'></span>
+  <span class='x__piece'></span>
+</button>
+<nav class='nav'>
+  <a>Link One</a>
+  <a>Link Two</a>
+  <a>Link Three</a>
+  <a>Link Four</a>
+  <a>Link Five</a>
+  <a>Link Six</a>
+</nav>

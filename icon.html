@@ -1,0 +1,232 @@
+<style>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #444246;
+  background: #f2f2eb;
+}
+
+div {
+  width: 72px;
+  height: 48px;
+  position: relative;
+  margin: 30px;
+  display: inline-block;
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+}
+div:before, div:after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+#camera {
+  width: 72px;
+  height: 58px;
+  background: #eee;
+  border-top: 14px solid #888;
+  border-bottom: 8px solid #888;
+  border-radius: 5px;
+}
+
+#camera:before {
+  width: 40px;
+  height: 40px;
+  background: #666;
+  border-radius: 100%;
+  left: 50%;
+  margin: -3px 0 0 -20px;
+  border: 6px solid #aaa;
+}
+
+/* Add more detail later */
+/* Lock */
+#lock {
+  width: 72px;
+  height: 43px;
+  background: #553e00;
+  top: 10px;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2), inset 0 12px 0 0 #efc84a, inset 0 -4px 0 0 #efc84a, inset 0 -8px 0 0 #c7a536, inset 0 -12px 0 0 #efc84a, inset 33px 0 0 0 #efc84a, inset -33px 0 0 0 #efc84a;
+  /* Key hole */
+}
+#lock:before {
+  width: 50px;
+  height: 30px;
+  border-radius: 30px 30px 0 0;
+  top: -30px;
+  margin: auto;
+  right: 0;
+  left: 0;
+  border-width: 8px 8px 0;
+  border-color: #b9b6ad #b9b6ad transparent #b9b6ad;
+  border-style: solid;
+  z-index: -1;
+}
+#lock:after {
+  width: 12px;
+  height: 12px;
+  background: #553e00;
+  margin: 10px auto 0;
+  position: relative;
+  border-radius: 100%;
+}
+
+/*@-webkit-keyframes lock {
+     0% { transform: rotate(135deg);}
+   99% { transform: rotate(90deg);}
+
+}*/
+#left {
+  width: 72px;
+  height: 48px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+#left:before {
+  height: 48px;
+  width: 48px;
+  border-left: 8px solid #fff;
+  border-top: 8px solid #fff;
+  border-radius: 5px;
+  left: 8px;
+  z-index: -1;
+  -webkit-transform: rotate(-45deg);
+}
+
+#left:after {
+  width: 52px;
+  height: 8px;
+  background: #fff;
+  top: 50%;
+  margin: -4px 0 0 10px;
+  z-index: -2;
+}
+
+/* WIFI */
+#battery {
+  width: 72px;
+  height: 48px;
+  background: #fff;
+  border-width: 4px 12px;
+  border-style: solid;
+  border-color: #777;
+  border-radius: 5px;
+  box-shadow: 22px 0 0 -15px #777, 0 3px 0 0 rgba(0, 0, 0, 0.2);
+}
+#battery:before {
+  top: 4px;
+  left: 34px;
+  border-color: transparent;
+  width: 10px;
+  height: 0px;
+  border-style: solid;
+  border-width: 32px 0 0 10px;
+  box-shadow: -30px 0 0 0 #bce382, -15px 0 0 0 #bce382;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    border-color: transparent;
+  }
+  51%, 100% {
+    border-color: transparent transparent transparent #bce382;
+  }
+}
+#paperclip {
+  top: 15px;
+  width: 52px;
+  height: 24px;
+  border-radius: 12px 0 0 12px;
+  border-width: 3px 0 3px 3px;
+  border-color: #e05e5f;
+  border-style: solid;
+  box-shadow: -2px 2px 0 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  transform: rotate(-45deg);
+}
+#paperclip:before, #paperclip:after {
+  border-color: #e05e5f;
+  border-style: solid;
+  box-shadow: 0px 2px 0 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 rgba(0, 0, 0, 0.2);
+}
+#paperclip:before {
+  width: 20px;
+  height: 18px;
+  border-radius: 0 12px 12px 0;
+  border-width: 3px 3px 3px 0;
+  right: -20px;
+  top: -3px;
+}
+#paperclip:after {
+  width: 40px;
+  height: 13px;
+  border-radius: 12px 0 0 12px;
+  border-width: 3px 0 3px 3px;
+  right: 0px;
+  top: 2px;
+}
+
+#bars {
+  height: 48px;
+  width: 18px;
+  background: #e7e5d8;
+  animation: bar01 4.0s infinite;
+}
+#bars:before, #bars:after {
+  bottom: 0;
+  height: 48px;
+  background: #e7e5d8;
+  width: 18px;
+}
+#bars:before {
+  left: -22px;
+  animation: bar02 4.0s infinite;
+}
+#bars:after {
+  right: -22px;
+  animation: bar03 4.0s infinite;
+}
+
+@keyframes bar01 {
+  0%,100% {
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2), inset 0 -42px 0 0 #8bb153;
+  }
+  40%,60% {
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2), inset 0 -20px 0 0 #8bb153;
+  }
+}
+@keyframes bar02 {
+  0%,100% {
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2), inset 0 -20px 0 0 #85d2d9;
+  }
+  40%,60% {
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2), inset 0 -36px 0 0 #85d2d9;
+  }
+}
+@keyframes bar03 {
+  0%,100% {
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2), inset 0 -10px 0 0 #ffab00;
+  }
+  40%,60% {
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2), inset 0 -44px 0 0 #ffab00;
+  }
+}
+
+</style>
+<!-- WIP-->
+<div id="lock"></div>
+<div id="bars"></div>
+<div id="battery"></div>
+<div id="paperclip"></div>
+<div id="camera"></div>
+<div id="left"></div>
+<div id="right"></div>
+<div id="calculator"></div>
+<div id="compass"></div>
+<div id="mbpro"></div>
