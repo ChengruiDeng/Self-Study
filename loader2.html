@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <style>
+#loadingBox {
+  wdidth: 100px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+}
+
+#loadingBox p {
+  margin-top: 2em;
+  margin-left: -10px;
+  color: rgba(33,150,244, .40)
+}
+.loader-walk {
+  
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.loader-walk > div {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #2196F3;
+  border-radius: 100%;
+  position: absolute;
+   -webkit-animation: animate 2s linear infinite;
+          animation: animate2 2s linear infinite;
+}
+.loader-walk > div:nth-of-type(1) {
+ -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;	
+  -webkit-animation-delay: -.4s;
+          animation-delay: -.4s;
+}
+.loader-walk > div:nth-of-type(2) {
+ -webkit-animation: animate 2s linear infinite;
+          animation: animate2 2s linear infinite;
+  -webkit-animation-delay: -.8s;
+          animation-delay: -.8s;
+}
+.loader-walk > div:nth-of-type(3) {
+ -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+.loader-walk > div:nth-of-type(4) {
+ -webkit-animation: animate 2s linear infinite;
+          animation: animate2 2s linear infinite;
+  -webkit-animation-delay: -1.6s;
+          animation-delay: -1.6s;
+}
+
+
+@-webkit-keyframes animate {
+  0% {
+    left: 100px;
+    top: 0;
+  }
+  80% {
+    left: 0;
+    top: 0;
+  }
+  85% {
+    left: 0;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+  }
+  90% {
+    width: 40px;
+    height: 15px;
+  }
+  95% {
+    left: 100px;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 100px;
+    top: 0;
+  }
+}
+
+@keyframes animate {
+  0% {
+    left: 100px;
+    top: 0;
+  }
+  80% {
+    left: 0;
+    top: 0;
+  }
+  85% {
+    left: 0;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+  }
+  90% {
+    width: 40px;
+    height: 15px;
+  }
+  95% {
+    left: 100px;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 100px;
+    top: 0;
+  }
+}
+@keyframes animate2 {
+  0% {
+    left: 100px;
+    top: 0;
+  }
+  80% {
+    left: 0;
+    top: 0;
+  }
+  85% {
+    left: 0;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  90% {
+    width: 40px;
+    height: 15px;
+  }
+  95% {
+    left: 100px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 100px;
+    top: 0;
+  }
+}
+
+
+  </style>
+  <body>
+<div id="loadingBox">
+  <div class="loader-walk">
+    <div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+  <p>LOADING</P>
+</div>
+
+    
+  <script>
+
+  </script>
+  </body>
+</html>

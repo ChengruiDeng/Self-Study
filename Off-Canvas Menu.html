@@ -1,33 +1,5 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script>
-var container = document.querySelector('.container');
-var main = document.querySelector('.main');
 
-function toggleSidebar(){
-    isShowingSidebar() ? hideSidebar() : showSidebar();
-}
-
-function showSidebar(){
-    container.classList.add('show-sidebar');
-}
-
-function hideSidebar(){
-    container.classList.remove('show-sidebar');
-}
-
-function isShowingSidebar(){
-    return container.classList.contains('show-sidebar');
-}
-
-document.querySelector('.hamburger').addEventListener('click', toggleSidebar, false);
-
-container.addEventListener('click', function(e){
-    if(isShowingSidebar() && main.contains(e.target)){
-        e.preventDefault();
-        hideSidebar();
-    }
-}, true);
-</script>
 <style>
 /* Page */
 
@@ -278,3 +250,32 @@ header h1 {
         <div class="bar"></div>
     </div>
 </div>
+<script>
+var container = document.querySelector('.container');
+var main = document.querySelector('.main');
+
+function toggleSidebar(){
+    isShowingSidebar() ? hideSidebar() : showSidebar();
+}
+
+function showSidebar(){
+    container.classList.add('show-sidebar');
+}
+
+function hideSidebar(){
+    container.classList.remove('show-sidebar');
+}
+
+function isShowingSidebar(){
+    return container.classList.contains('show-sidebar');
+}
+
+document.querySelector('.hamburger').addEventListener('click', toggleSidebar, false);
+
+container.addEventListener('click', function(e){
+    if(isShowingSidebar() && main.contains(e.target)){
+        e.preventDefault();
+        hideSidebar();
+    }
+}, true);
+</script>
