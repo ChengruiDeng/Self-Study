@@ -1,0 +1,177 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #00a8ff;
+  height: 100vh;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+body .container {
+  width: 320px;
+  height: 50px;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 25px;
+}
+body .container:hover {
+  cursor: pointer;
+}
+body .container .labelBlock {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 318px;
+  height: 48px;
+}
+body .container .labelBlock .sale,
+body .container .labelBlock .rent {
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 100;
+  z-index: 1;
+  -webkit-transition: color 0.7s ease-out;
+          transition: color 0.7s ease-out;
+}
+body .container .labelBlock .sale {
+  color: #00a8ff;
+}
+body .container .labelBlock .rent {
+  color: #fff;
+}
+body .container .tab {
+  width: 159px;
+  height: 48px;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in;
+          transition: all 0.3s ease-in;
+}
+.offsetTab {
+  margin-left: 159px;
+}
+.fontColorIsWhite {
+  color: #fff !important;
+}
+.fontColorIsBlue {
+  color: #00a8ff !important;
+}
+.rotateOne {
+  -webkit-animation: AnimeRotateOne 0.5s ease-out;
+          animation: AnimeRotateOne 0.5s ease-out;
+}
+.rotateTwo {
+  -webkit-animation: AnimeRotateTwo 0.5s ease-out;
+          animation: AnimeRotateTwo 0.5s ease-out;
+}
+@-webkit-keyframes AnimeRotateOne {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(45deg);
+            transform: rotateY(45deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+@keyframes AnimeRotateOne {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(45deg);
+            transform: rotateY(45deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+@-webkit-keyframes AnimeRotateTwo {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-45deg);
+            transform: rotateY(-45deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+@keyframes AnimeRotateTwo {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-45deg);
+            transform: rotateY(-45deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+
+</style>
+
+<div class="container">
+  <div class="labelBlock">
+    <div class="sale">Sale</div>
+    <div class="rent">Rent</div>
+  </div>
+  <div class="tab"></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+(function () {
+    $(document).ready(function () {
+        var count;
+        count = 0;
+        return $('.container').click(function () {
+            $('.tab').toggleClass('offsetTab');
+            $('.sale').toggleClass('fontColorIsWhite');
+            $('.rent').toggleClass('fontColorIsBlue');
+            $(this).toggleClass('rotateOne');
+            if (count === 1) {
+                $(this).toggleClass('rotateTwo');
+                count = 0;
+            }
+            return count++;
+        });
+    });
+}.call(this));
+</script>
